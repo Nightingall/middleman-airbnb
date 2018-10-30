@@ -22,3 +22,7 @@ activate :deploy do |deploy|
 end
 
 activate :directory_indexes
+
+["nightingall", "papillard", "James-Thorp", "gglewinsmith", "n4t496"].each do |name|
+  proxy "/flats/#{name}.html", "/flats/show.html", locals: { owner: name }, ignore: true
+end
